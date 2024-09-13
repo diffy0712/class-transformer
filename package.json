@@ -36,19 +36,16 @@
     "lint:check": "eslint --max-warnings 0 src/",
     "test": "jest --coverage --verbose",
     "test:watch": "jest --watch",
-    "test:ci": "jest --runInBand --no-cache --coverage --verbose"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
+    "test:ci": "jest --runInBand --no-cache --coverage --verbose",
+    "prepare": "husky"
   },
   "lint-staged": {
     "*.md": [
-      "npm run prettier:fix"
+      "npm run prettier:check"
     ],
     "*.ts": [
-      "npm run prettier:fix"
+      "npm run prettier:check",
+      "npm run lint:check"
     ]
   },
   "devDependencies": {
