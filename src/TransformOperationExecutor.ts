@@ -22,7 +22,10 @@ export class TransformOperationExecutor {
   // Constructor
   // -------------------------------------------------------------------------
 
-  constructor(private transformationType: TransformationType, private options: ClassTransformOptions) {}
+  constructor(
+    private transformationType: TransformationType,
+    private options: ClassTransformOptions
+  ) {}
 
   // -------------------------------------------------------------------------
   // Public Methods
