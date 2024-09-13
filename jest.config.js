@@ -1,10 +1,12 @@
+/** @type {import('ts-jest').JestConfigWithTsJest} **/
 module.exports = {
-  preset: 'ts-jest',
-  testEnvironment: 'node',
+  testEnvironment: "node",
   collectCoverageFrom: ['src/**/*.ts', '!src/**/index.ts', '!src/**/*.interface.ts'],
-  globals: {
-    'ts-jest': {
-      tsconfig: 'tsconfig.spec.json',
-    },
+  transform: {
+    "^.+.tsx?$": [
+      "ts-jest",{
+        tsconfig: 'tsconfig.spec.json',
+      }
+    ],
   },
 };
